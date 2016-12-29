@@ -11,6 +11,7 @@ public:
 	Person(double salaryIn):id(counter),salary(salaryIn){counter++;};
 	virtual int getId(){return id;}
 	double getSalary(){return salary;}
+	int tester(){return id;}
 };
 
 class Teacher: public Person{
@@ -20,7 +21,7 @@ public:
 	Teacher():Person(),school("NDF"){}
 	Teacher(double salaryIn,string schoolIn):Person(salaryIn),school(schoolIn){}
 	string getSchool(){return school;}
-	int getId(){return 0;}
+	int getId(){return this->tester();}
 };
 
 int Person::counter = 1;
